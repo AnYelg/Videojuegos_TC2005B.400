@@ -7,6 +7,7 @@ public class Points : MonoBehaviour
 {
     [SerializeField] int point;
     [SerializeField] Text pointsText;
+    [SerializeField] Text gameOver;
     
 
     void OnTriggerEnter2D(Collider2D col)
@@ -16,6 +17,7 @@ public class Points : MonoBehaviour
             Destroy(col.gameObject);
             point +=30;
             pointsText.text = "Score: " + point;
+            gameOver.text = "Game Over!";
         }
         if(col.gameObject.tag == "pulga")
         {

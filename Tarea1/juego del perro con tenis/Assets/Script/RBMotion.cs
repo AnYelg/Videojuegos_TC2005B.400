@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class RBMotion : MonoBehaviour
 {
 
     [SerializeField] float speed = 0.5f;
+    [SerializeField] Text speedQuantity;
     Vector3 move;
 
     void Update()
@@ -24,6 +27,7 @@ public class RBMotion : MonoBehaviour
         {
             speed += 2f;
             Destroy(col.gameObject);
+            speedQuantity.text = "Velocidad: "+speed;
         }
     
     }
